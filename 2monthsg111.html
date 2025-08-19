@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2 Months Anniversary ❤️</title>
+<style>
+  body {
+    background: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .heart-button {
+    font-size: 3em;
+    color: #ff4b6e;
+    background: none;
+    border: none;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+    transition: transform 0.3s ease;
+  }
+  .content {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .content.show {
+    opacity: 1;
+  }
+  .content img {
+    max-width: 250px;
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+  .highlight {
+    color: #ff4b6e;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+  /* เอฟเฟกต์กลีบดอกไม้/หัวใจ */
+  .falling {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear forwards;
+    z-index: 1;
+  }
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <button class="heart-button" id="heartBtn" onclick="nextStep()">❤️</button>
+  <div class="content" id="contentArea"></div>
+</div>
+
+<!-- เพลงโรแมนติก -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1a2a72f61c.mp3?filename=romantic-background-110095.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let step = 0;
+let heart = document.getElementById("heartBtn");
+
+function nextStep() {
+  const area = document.getElementById('contentArea');
+  step++;
+
+  // หัวใจเต้นแรงขึ้นเรื่อยๆ
+  heart.style.transform = `scale(${1 + step*0.05})`;
+
+  switch(step) {
+    case 1:
+      area.innerHTML = '<p>📜 A special letter for you...</p><img src="https://media.giphy.com/media/efyEShk2FJ9X2Kpd7V/giphy.gif" alt="Letter">';
+      break;
+    case 2:
+      area.innerHTML = '<p>Do you know what makes today special? 💖</p><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWszMGwxZ3UwdG9obWxkYzJxNWxiZThyYXM2YTZjMXc3ZzV0ZWZvayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tU2mV8ALzJEdXAAwRo/giphy.gif" alt="Special day">';
+      break;
+    case 3:
+      area.innerHTML = '<p>🌸 Surprise flowers!</p><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXF1MGZlN2pidTl5cnk0cHN1OGxnOGR1dGRiMXN5eDV2dnU1ZTdpYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/QiY6ZEhKYvOHnPgQXf/giphy.gif" alt="Flowers">';
+      break;
+    case 4:
+      area.innerHTML = '<p>These flowers are for my dearest love 💕</p>';
+      break;
+    case 5:
+      area.innerHTML = '<p>❤️ Sending all my love to you!</p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWttbmQ4eXE5YmhidGRrMzloZjlrdmM0YzFwNHI3dW85eTI0OGd5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Yle9Yz9izeVRyiwavn/giphy.gif" alt="Love hearts">';
+      break;
+    case 6:
+      area.innerHTML = `<p class="highlight">Happy 2 Months Anniversary!</p>
+      <p>My love, these two months have been nothing short of magical.<br>
+Even though we are miles apart, I feel you close to me every day.<br><br>
+Thank you for being you – caring, loving, and my safe place.<br>
+I can’t wait for all the months and years ahead together. 🐧💕</p>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGx3b2djaWVhY21mazM3Nzg4OXV1MmVmaWJ1bDZ3M29nOXc4djk3OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sh11BmCf8HY8F0c5GN/giphy.gif" alt="Anniversary">`;
+      break;
+    case 7:
+      area.innerHTML = '<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute couple penguins">';
+      break;
+    case 8:
+      area.innerHTML = '<p>Thank you, my love, for being amazing every day. I appreciate you! 💌</p><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGx3b2djaWVhY21mazM3Nzg4OXV1MmVmaWJ1bDZ3M29nOXc4djk3OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VIKa3CjZDCoymNcBY5/giphy.gif" alt="Thank you">';
+      break;
+    case 9:
+      area.innerHTML = '<p>Frame &lt;3 Ryan</p><img src="https://media.giphy.com/media/jMGxhWR7rtTNu/giphy.gif" alt="Penguin hug">';
+      break;
+    default:
+      area.innerHTML = '<p>🎉 Hope you enjoyed all the surprises! 🎉</p>';
+  }
+
+  // trigger fade-in effect
+  area.classList.remove("show");
+  setTimeout(() => {
+    area.classList.add("show");
+  }, 100);
+}
+
+// ฟังก์ชันสร้างดอกไม้/หัวใจร่วง
+function createFalling() {
+  const el = document.createElement("div");
+  el.classList.add("falling");
+  el.innerText = Math.random() > 0.5 ? "🌸" : "❤️";
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(el);
+
+  setTimeout(() => {
+    el.remove();
+  }, 8000);
+}
+
+// เรียกดอกไม้/หัวใจร่วงตลอดเวลา
+setInterval(createFalling, 500);
+</script>
+</body>
+</html>
